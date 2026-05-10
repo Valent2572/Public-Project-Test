@@ -115,4 +115,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Trigger once on load
+
+    // Falling Flowers Animation Logic
+    const flowerContainer = document.getElementById('falling-flowers-container');
+    const flowerTypes = ['🌸', '💮', '🌺', '🏵️', '🌼', '✨', '🍃']; // Bervariasi: bunga dan sedikit daun/kilauan
+
+    function createFlower() {
+        if (!flowerContainer) return;
+        
+        const flower = document.createElement('div');
+        flower.classList.add('flower');
+        
+        // Randomize character
+        flower.innerText = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
+        
+        // Random position across width
+        flower.style.left = Math.random() * 100 + 'vw';
+        
+        // Random size (Kecil-kecil aja: 0.5rem - 1.2rem)
+        const size = Math.random() * 0.7 + 0.5;
+        flower.style.fontSize = size + 'rem';
+        
+        // Random opacity (sedikit transparan: 0.15 - 0.5)
+        flower.style.opacity = Math.random() * 0.35 + 0.15;
+        
+        // Random duration (biar jatuhnya bervariasi)
+        const fallDuration = Math.random() * 7 + 5; // 5 to 12 seconds
+        const swayDuration = Math.random() * 3 + 2; // 2 to 5 seconds
+        
+        flower.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
+        
+        flowerContainer.appendChild(flower);
+        
+        // Clean up memory after animation finishes
+        setTimeout(() => {
+            flower.remove();
+        }, fallDuration * 1000);
+    }
+
+    // Spawn a flower every 400ms (tidak terlalu ramai biar tidak mengganggu)
+    if (flowerContainer) {
+        setInterval(createFlower, 400);
+    }
 });
