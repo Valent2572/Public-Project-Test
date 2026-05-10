@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Loading Screen Logic
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        // Biarkan animasi bar berjalan selama 1.5 detik, lalu pudar
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            // Hapus dari DOM setelah animasi fade out selesai
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 800);
+        }, 1500);
+    }
+
     const navbar = document.getElementById('navbar');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.getElementById('nav-links');
