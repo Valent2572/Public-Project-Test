@@ -99,12 +99,12 @@ nav {
 }
 
 nav.sticky {
-    background-color: rgba(252, 251, 249, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
     padding: 1rem 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 nav .container {
@@ -481,12 +481,15 @@ footer p {
         right: -100%;
         width: 70%;
         height: 100vh;
-        background: var(--bg);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: saturate(180%) blur(25px);
+        -webkit-backdrop-filter: saturate(180%) blur(25px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: var(--transition);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.08);
+        border-left: 1px solid rgba(255, 255, 255, 0.4);
         z-index: 1000;
     }
     .nav-links.active {
