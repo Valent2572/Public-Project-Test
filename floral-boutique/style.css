@@ -187,17 +187,38 @@ nav .container {
     font-size: 5.5rem;
     margin-bottom: 1.5rem;
     line-height: 1.1;
-    color: #000000; /* Pure Black for maximum contrast */
-    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1); /* Sharp outline instead of blur */
     font-weight: 900;
 }
 
 .hero p {
     font-size: 1.6rem;
-    color: #1a1a1a;
     margin-bottom: 3rem;
     font-weight: 700;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+}
+
+.hero h1, .hero p {
+    /* Milky White base with Pure White shine */
+    background: linear-gradient(
+        120deg,
+        #FFF9EE 0%,    /* Milky White */
+        #FFF9EE 40%,
+        #FFFFFF 50%,   /* Pure white shine */
+        #FFF9EE 60%,
+        #FFF9EE 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textShine 3s linear infinite;
+    /* Soft dark blur so the text remains readable against bright backgrounds */
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.5));
+}
+
+@keyframes textShine {
+    to {
+        background-position: 200% center;
+    }
 }
 
 /* About Section */
