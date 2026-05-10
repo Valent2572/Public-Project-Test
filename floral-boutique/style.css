@@ -99,12 +99,12 @@ nav {
 }
 
 nav.sticky {
-    background-color: rgba(255, 255, 255, 0.65);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255, 255, 255, 0.82);
+    backdrop-filter: saturate(200%) blur(35px);
+    -webkit-backdrop-filter: saturate(200%) blur(35px);
     padding: 1rem 0;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 nav .container {
@@ -481,15 +481,15 @@ footer p {
         right: -100%;
         width: 70%;
         height: 100vh;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: saturate(180%) blur(25px);
-        -webkit-backdrop-filter: saturate(180%) blur(25px);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: saturate(200%) blur(40px);
+        -webkit-backdrop-filter: saturate(200%) blur(40px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: var(--transition);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.08);
-        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: -10px 0 40px rgba(0,0,0,0.08);
+        border-left: 1px solid rgba(255, 255, 255, 0.6);
         z-index: 1000;
     }
     .nav-links.active {
