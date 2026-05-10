@@ -135,44 +135,55 @@ nav .container {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: url('hero.png') no-repeat center center/cover;
     overflow: hidden;
+    background-color: var(--bg);
 }
 
-.hero::before {
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('hero.png') no-repeat center center/cover;
+    z-index: 1;
+}
+
+.hero-bg::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 252, 249, 0.3); /* Lighter overlay */
-    backdrop-filter: blur(1px);
-    z-index: 1;
+    background: rgba(255, 252, 249, 0.4); /* Subtle cream overlay only on the image */
+    z-index: 2;
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
-    z-index: 10; /* Much higher z-index */
+    z-index: 10; /* Strictly on top of background layers */
     text-align: center;
     padding: 2rem;
+    position: relative;
 }
 
 .hero h1 {
-    font-size: 5rem;
-    margin-bottom: 1rem;
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
     line-height: 1.1;
-    color: #1a1a1a; /* Darker, sharper text */
-    text-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
-    font-weight: 800;
+    color: #000000; /* Pure Black for maximum contrast */
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1); /* Sharp outline instead of blur */
+    font-weight: 900;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    color: #333; /* Darker sub-text */
-    margin-bottom: 2.5rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
 }
 
 /* About Section */
