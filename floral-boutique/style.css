@@ -649,37 +649,61 @@ footer p {
 
 .loading-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: var(--text);
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.05); /* Distinct faint color for the unloaded part */
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
-    animation: pulse 1.5s infinite alternate;
-}
-
-.loading-bar-container {
-    width: 100%;
-    height: 4px;
-    background-color: rgba(0,0,0,0.05);
-    border-radius: 4px;
-    overflow: hidden;
     position: relative;
+    display: inline-block;
+    z-index: 10;
 }
 
-.loading-bar {
+.loading-logo::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 0%;
     height: 100%;
-    background-color: #E4BFC3; /* var(--primary-dark) */
-    border-radius: 4px;
-    animation: loadingFill 1.5s ease-in-out forwards;
+    color: #E4BFC3; /* Premium Pink */
+    overflow: hidden;
+    white-space: nowrap;
+    animation: textFill 2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
-@keyframes loadingFill {
+.loading-flowers-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind text */
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bg-flower {
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(-30deg);
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Spring effect */
+}
+
+/* Individual sizes and delays for organic feel */
+.bg-flower:nth-child(1) { font-size: 15rem; transition-delay: 0.1s; }
+.bg-flower:nth-child(2) { font-size: 20rem; transition-delay: 0.3s; }
+.bg-flower:nth-child(3) { font-size: 10rem; transition-delay: 0.4s; }
+.bg-flower:nth-child(4) { font-size: 18rem; transition-delay: 0.2s; }
+.bg-flower:nth-child(5) { font-size: 25rem; transition-delay: 0.05s; }
+
+.loading-screen.bloom .bg-flower {
+    opacity: 0.3; /* Subtle background */
+    transform: translate(-50%, -50%) scale(1) rotate(15deg);
+}
+
+@keyframes textFill {
     0% { width: 0%; }
-    40% { width: 60%; }
+    50% { width: 40%; } /* Slight pause in the middle */
+    70% { width: 70%; }
     100% { width: 100%; }
-}
-
-@keyframes pulse {
-    0% { opacity: 0.6; transform: scale(0.98); }
-    100% { opacity: 1; transform: scale(1); }
 }

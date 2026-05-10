@@ -2,14 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Loading Screen Logic
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) {
-        // Biarkan animasi bar berjalan selama 1.5 detik, lalu pudar
+        // Animasi teks mengisi (textFill) berjalan selama 2 detik
         setTimeout(() => {
-            loadingScreen.classList.add('hidden');
-            // Hapus dari DOM setelah animasi fade out selesai
+            // Setelah teks terisi penuh, picu efek bunga bermekaran (bloom)
+            loadingScreen.classList.add('bloom');
+            
+            // Beri waktu 0.5 detik untuk menikmati bunga yang mekar (total 2.5s)
             setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 800);
-        }, 1500);
+                loadingScreen.classList.add('hidden');
+                
+                // Hapus dari DOM setelah animasi fade out selesai
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 800);
+            }, 500);
+            
+        }, 2000);
     }
 
     const navbar = document.getElementById('navbar');
