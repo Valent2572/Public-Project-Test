@@ -655,6 +655,7 @@ footer p {
     letter-spacing: -0.02em;
     position: relative;
     display: inline-block;
+    white-space: nowrap; /* Fix wrapping mismatch with ::before */
     z-index: 10;
 }
 
