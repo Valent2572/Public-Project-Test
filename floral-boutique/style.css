@@ -129,7 +129,8 @@ nav .container {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    padding: 120px 0 60px 0;
     display: flex;
     align-items: center;
     position: relative;
@@ -138,8 +139,10 @@ nav .container {
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 800px;
+    margin: 0 auto;
     z-index: 2;
+    text-align: center;
 }
 
 .hero h1 {
@@ -155,18 +158,24 @@ nav .container {
     margin-bottom: 2.5rem;
 }
 
-.hero-image {
-    position: absolute;
-    right: -5%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50%;
-    height: 80%;
-    border-radius: 40px 0 0 40px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: var(--shadow);
-    z-index: 1;
+.hero-img-container {
+    margin: 3rem auto;
+    width: 100%;
+    max-width: 700px;
+    perspective: 1000px;
+}
+
+.hero-img-main {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: var(--shadow-hover);
+    transition: var(--transition);
+    transform: rotateX(5deg);
+}
+
+.hero-img-main:hover {
+    transform: rotateX(0deg) scale(1.02);
 }
 
 /* About Section */
