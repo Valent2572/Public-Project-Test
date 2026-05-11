@@ -212,7 +212,7 @@ nav .container {
     background-clip: text;
     animation: textShine 3s linear infinite;
     /* Use text-stroke instead of text-shadow because text-shadow fills the transparent text */
-    -webkit-text-stroke: 1px #ffffff;
+    -webkit-text-stroke: 0.2px #ffffff;
     /* Soft dark blur so the outlined text remains readable against bright backgrounds */
     filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3));
 }
